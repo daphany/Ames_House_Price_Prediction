@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>House Prices Prediction</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+           <link rel="stylesheet" href="../static/css/style.css">
+           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+        </head>
+ 
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="http://127.0.0.1:5000">House Prices Prediction</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="http://127.0.0.1:5000">Home</a>
+        <a class="nav-link" href="https://yajingran.github.io/group_2_final_project/dashboards/dashboard1.html">Dashboards</a>
+        <a class="nav-link" href="https://yajingran.github.io/group_2_final_project/dashboards/ml.html">Machine Learning </a>
+        <a class="nav-link" href="https://github.com/yajingran/group_2_final_project">Github Repository</a>
+
+        
+      </div>
+    </div>
+  </nav>
+
+    <!--Jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4"><b>Ames's Home of Property</b></h1>
+        <p class="lead"  style="text-align:center"><b>Using multiple linear regression to build a machine learning model which we implemented onto the website <br>for predicting house sales prices based on selected features.</b></p>
+    </div>
+ 
+ 
+
+ 
+ 
+        <div class="row align-items-center text-center m-0">
+        <div class="col-md-6">
+ 
+            <div class="container">
+                <div class="header">
+                  <h2>Features Input</h2>
+                </div>
+               
+                
+                <div class=form>
+                  <form action="/predict" method="POST" id="form">
+                  <div class="form-control">
+ 
+                  <label class='select_label'>Neighborhood</label>
+                  <select id="neighborhood" name='neighborhood'>
+                    <option value="0">Bloomington Heights</option>
+                    <option value="1">Bluestem</option>
+                    <option value="2">Briardale</option>
+                    <option value="3">Brookside</option>
+                    <option value="4">Clear Creek</option>
+                    <option value="5">College Creek</option>
+                    <option value="6">Crawford</option>
+                    <option value="7">Edwards</option>
+                    <option value="8">Gilbert</option>
+                    <option value="9">Greens</option>
+                    <option value="10">Green Hill</option>
+                    <option value="11">lowa DOT and Rail Road</option>
+                    <option value="12">Landmark</option>
+                    <option value="13">Meadow Village</option>
+                    <option value="14">Mitchell</option>
+                    <option value="15">North Ames</option>
+                    <option value="18">Northridge</option>
+                    <option value="16">Northpark Villa</option>
+                    <option value="19">Northridge Heights</option>
+                    <option value="17">Northwest Ames</option>
+                    <option value="20">Old Town</option>
+                    <option value="21">South & West of lowa State University</option>
+                    <option value="22">Sawyer</option>
+                    <option value="23">Sawyer West</option>
+                    <option value="24">Somerset</option>
+                    <option value="25">Stone Brook</option>
+                    <option value="26">Timberland</option>
+                    <option value="27">Veenker</option>
+                  </select><br>
+                </div>
+ 
+                  <div class="form-control">
+                    <label>Total Area (ft²)</label><br>
+                    <input type="number" placeholder="Enter Area" id="total_area" name='total_area' required min="0"><br>
+                  </div>
+                  
+                  <div class="form-control">
+                    <label class='select_label'>Overall Quality (higher score=better quality)</label>
+                    <select id="overallqual" name='overallqual'>
+                      <option value="0">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="1">10</option>
+                    </select><br>
+                  </div>
+ 
+                  <div class="form-control">
+                    <label class='select_label'>Garage Cars</label><br>
+                    <select id="garagecars" name='garagecars'>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><br>
+                  </div>                       
+    
+ 
+                  <div class=form-control>
+                    <label class='select_label'>Full Bath</label><br>
+                    <select id="fullbath" name='fullbath'>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                  
+                  <div class=form-control>
+                    <label>Year Built</label><br>
+                    <input type="number" placeholder="Enter Year" id="yearbuilt" name='yearbuilt' required min="0"><br>
+                  </div>
+ 
+                  <div class=form-control>
+                    <label>Year Remodeled</label><br>
+                    <input type="number" placeholder="Enter Year" id="yearremodadd" name='yearremodadd' required min="0"><br>
+                  </div>
+ 
+                  <div class=form-control>
+                    <label>Year Sold</label><br>
+                    <input type="number" placeholder="Enter Year" id="yearsold" name="yearsold" required min="0"><br>
+                  </div>
+    
+              <button id="predict-btn" class="mt-20 btn action-1" style="background-color:#074fa6"><b> Predict Price</b></button>
+              
+                </form>
+              </div>
+            </div>
+             
+        
+    <div class="container-fliud">
+        <div class="row">
+         </div>
+     </div>
+    
+       </div>
+ <div class="col-md-6">
+     <div class="row">
+         <p class="background-para">
+             Type in the features and get the predicted price of your dream house.
+         </p>
+     </div>
+
+     <div class="row" id="result">
+         <p class="background-para"> The price of your dream house is ${{ pred }}. </p>
+     </div>
+
+ </div>
+ 
+   
+    </div>
+
+    <script>
+        $("#form").on("submit", function (e){
+            if($("#yearsold").val().length != 4 || $("#yearbuilt").val().length != 4 || $("#yearremodadd").val().length !=4){
+                console.log("error");
+                e.preventDefault();
+            }else {
+                console.log("success");
+                return true;
+            }
+        })
+    </script>
+</body>
+</html>

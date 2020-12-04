@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="../static/css/style2.css">
+
+    <title>Machine learning</title>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="http://127.0.0.1:5000">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="#exploration">Exploration</a>
+      <a class="nav-link" href="#cleaning">Cleaning</a>
+      <a class="nav-link" href="#selection">Selection </a>
+      <a class="nav-link" href="#export">Data Export</a>
+      <a class="nav-link" href="#database">AWS Database</a>
+      <a class="nav-link" href="#manipulation">Manipulation</a>
+      <a class="nav-link" href="#learning">Learning</a>
+      
+    </div>
+  </div>
+</nav>
+<section class="slider">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="../images/blue.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Machine Learning</h1>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../images/blue.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h1>Machine Learning</h1>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../images/blue.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h1>Machine Learning</h1>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="machine-learning">
+  <div class="container">
+      <h1>Machine Learning</h1>
+      <p class="para">The lifecycle of our machine learning model:</p>
+      <ul>
+        <li><p>Step 1: Data Exploration</p></li>
+        <li><p>Step 2: Data Cleaning Feature Selection</p></li>
+        <li><p>Step 3: Feature Selection</p></li>
+        <li><p>Step 4: Cleaned Data Export to Database</p></li>
+        <li><p>Step 5: Connecting to AWS Database</p></li>
+        <li><p>Step 5: Data Manipulation</p></li>
+        <li><p>Step 6: Machine Learning</p></li>
+      </ul>
+  </div>
+</section>
+
+<section class="data-exploration" id="exploration">
+  <div class="container">
+    <h1>Step 1: Data Exploration</h1>
+    <p>Since we have 81 features/descriptive variables that affect the house price, we need to explore the data and understand the data structure, data types, and the meaning of each column as well as to check if there are any missing values and duplicates.  Our dataset can be divided into 4 main groups: <span class="bolds">nominal</span>(categorical), <span class="bolds">ordinal</span>, <span class="bolds">discrete</span>, and <span class="bolds">continuous</span>. Each group is defined as below:</p>
+    <p><span class="bolds">Nominal/categorical:</span> non-numerical and lack clear-cut order such as Neighborhood, MS Zoning, Type of street.</p>
+    <p><span class="bolds">Ordinal:</span> categorical but have a clear cut order such as Overall Quality(10-Very Excellent, 1-Very Poor)</p>
+    <p><span class="bolds">Discrete:</span> numerical data that can only take certain values such as Year Build, Year Sold</p>
+    <p><span class="bolds">Continuous:</span> numerical date that can take any value within a range (Total Area,  Total Basement Square Feet)</p>
+  </div>
+</section>
+
+<section class="data-cleaning" id="cleaning">
+  <div class="container">
+    <h1>Step 2: Data Cleaning Feature Selection </h1>
+    <p>We started off by checking the missing value ratio and drop those columns with more than 20% of missing data.</p>
+    <img src="../images/1.jpg">
+    <img src="../images/2.jpg">
+    <p>Since our target users are residential users, we decided to only include residential properties.</p>
+    <img src="../images/3.jpg">
+    <p>For columns that have missing values, we either replace them with mode, median, or 0.</p>
+    <img src="../images/4.jpg">
+    <p>For practical reasons, we created an additional column: “total_area” to combine similar categories such as total basement square footage, 1st-floor square footage and etc. </p>
+    <img src="../images/5.jpg">
+    <p>For simplicity reason, we divided our data into 2 categories only: categorical and numerical. Since we have 81 features, it seems more practical to select only the most relevant ones for our final model. Using heatmap from seaborn module, we were able to identify numerical variables that are highly correlated with the target: sale price. We can also order the variables based on the degree of correlation with sale price. </p>
+    <img src="../images/6.jpg">
+    <img src="../images/7.jpg">
+  </div>
+</section>
+
+<section class="feature-selection" id="selection">
+  <div class="container">
+    <h1>Step 3: Feature Selection</h1>
+    <p>At this stage, we selected the above top 11 numerical features that are highly correlated to sale price with additional 4 categorical variables( LotConfig, Neighborhood, BuildingType, Foundation)that we thought might be important when buyers are considering purchasing a house.</p>
+  </div>
+</section>
+
+<section class="data-export" id="export">
+  <div class="container">
+    <h1>Step 4: Cleaned Data Export to Database</h1>
+    <p>Cleaned dataset was then exported as csv file to database</p>
+    <img src="../images/8.jpg">
+  </div>
+</section>
+
+<section class="AWS-database" id="database">
+  <div class="container">
+    <h1>Step 5: Connecting to AWS Database</h1>
+    <p>As required, we connected to our AWS database using the below code and import out cleaned dataset for building the machine learning model:</p>
+    <img src="../images/9.jpg">
+  </div>
+</section>
+
+<section class="data-manipulation" id="manipulation">
+  <div class="container">
+    <h1>Step 5: Data Manipulation</h1>
+    <p>Label Encoding can be achieved using Sklearn library. LabelEncoder converts categorical variables to numeric values. </p>
+    <img src="../images/10.jpg">
+  </div>
+</section>
+
+<section class="machine-learning" id="learning">
+  <div class="container">
+    <h1>Step 6: Machine Learning</h1>
+    <p>In this project, our goal is to predict house sale price based on selected 8 feature variables. Supervised machine learning problems can be broadly divided into two types of problems: classification problems and regression problems. Classification is the process of predicting the class of given data points. it is used in credit approval, medical diagnosis, target marketing. Regression problems involve trying to predict a continuous target variable. As the sale price is continuous, this is a regression problem. The most basic regression technique available is Linear Regression. Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data. As we have more than two variables, Multiple Linear Regression will be more suited in our case. Multiple Linear Regression is used to estimate the relationship between two or more independent variables and one dependent variable. It is used if you want to find out the following:</p>
+    <p class="blues">1. How strong the relationship is between two or more independent variables and one dependent variable</p>
+    <p class="blues">2. The value of the dependent variable at a certain value of the independent variables</p>
+
+    <p>The advantages and limitations of Multiple Linear Regression is as follows:</p>
+    <p><span class="bolds">Advantages</span></p>
+    <p class="blues">1.  allows us to determine the relative influence of more than one predictor variables to the target variable.</p>
+    <p class="blues">2. enables us to identify outliers (find out the features that have a strong correlations and the ones that do not)</p>
+    <p class="blues">3. It is fast to run the model</p>
+
+    <p><span class="bolds">Limitations</span></p>
+    <p class="blues">1.  the size of the sample may lead to the pitfall of incomplete data</p>
+    <p class="blues">2.  predictor values provide insights for limited features</p>
+    <p class="blues">3.  If we want to create any linear model, it is essential that the features are normally distributed. This is one of the assumptions of multiple linear regression.</p>
+
+    <p>Another model that might address regression problem is Neural Network. 
+    Neural networks (also known as artificial neural networks, or ANN) are a set of algorithms that are modeled after the human brain. They are an advanced form of machine learning that recognizes patterns and features in input data and provides a clear quantitative output. 
+    neural networks are effective at detecting complex, nonlinear relationships. Neural networks also have greater tolerance for messy data and can learn to ignore noisy characteristics in data. The 3 biggest disadvantages are neural networks are prone to overfitting, layers of neurons are often too complex to dissect and understand, models might take a lot of time to run depending on the number of layers and number of epochs.
+    </p>
+
+    <p>After trials and errors, we decided to use Multiple Linear Regression because it gave a comparable result as Deep Learning Model while having a more consistent result with significantly faster runtime.</p>
+
+    <p>The equation for Multiple Linear Regression is as follow:</p>
+    <img src="../images/11.jpg">
+    <p>Where, for i = n observations:</p>
+    <p class="blues">Yi = dependent variable/target</p>
+    <p class="blues">β0 = y-intercept</p>
+    <p class="blues">Xi1 = independent/ feature variable</p>
+    <p class="blues">β1 = slope coefficients for each feature variable</p>
+    <p class="blues">Εi  = random error component</p>
+    <p>We used sklearn's LinearRegression() method to run our multiple linear regression. It will give us the best fit line for the data it receives which gives the best predictions overall for the training data; which minimizes loss between the line and the target values </p>
+    <p>The standard loss function used in linear regression is mean squared error(MSE). The mean squared error indicates how close a regression line is to a set of points. It does this by taking the distances from the points to the regression line (these distances are the “errors”) and squaring them. The smaller the mean squared error, the closer we are to finding the line of best fit.</p>
+    <p>The image below illustrates a line of best fit for a single feature variable, using the MSE</p>
+    <img src="../images/12.jpg">
+    <p>Besides from looking at the MSE, we also evaluate the performance of our model by checking the R2 Score. The R2 score ranges from 0 to 1, and can be thought of as the percentage of variation in the data that is explained by the predictive power of the model. The higher the score, the better the performance. 0% indicates that the model explains none of the variability of the response data around its mean, 100% indicates that the model explains all the variability of the response data around its mean. In our model. We tested the performance of our model by iterating different numbers of features to the model. Our goal is to have a decent R2 score while using the most practical number of features we can later put on our website for users to choose from.</p>
+
+    <h2>Import packages</h2>
+    <img src="../images/13.jpg">
+
+    <h2>Separate the target and features variables</h2>
+    <p>Feature selection can be an important part of model selection. In supervised learning, including features in a model which do not provide information on the label is useless at best and may prevent generalization at worst. As a result, we excluded “ames_order” and “pid”. </p>
+    <img src="../images/14.jpg">
+
+    <h2>Splitting dataset into training and testing sets (80/20 split)</h2>
+    <p>This process is to make sure that our model won’t overfit to particular data in that set and should generalize well to new data. If we simply train on the entire training data set, then our model will likely become overfit to the particular data in that set, such that it may actually be worse at predicting the sale price for new houses. </p>
+    <img src="../images/15.jpg">
+
+    <h2>Processing training and testing sets using StandardScaler and taking log</h2>
+    <p>StandardScaler standardizes our feature variables by subtracting the mean and then scaling to unit variance. Unit variance means dividing all the values by the standard deviation. Standardization of a dataset is a common requirement for many machine learning estimators: they might behave badly if the individual features do not more or less look like standard normally distributed data. We chose to take a log of our target variable to normalize the data because it is easier to convert them back than using StanadardScaler in order to compare the original sale price and predicted sale price.</p>
+    <img src="../images/16.jpg">
+
+    <h2>Reshape the y values, define the model and time the model</h2>
+    <img src="../images/17.jpg">
+
+    <h2>Fit the model and run prediction on test set</h2>
+    <img src="../images/18.jpg">
+
+    <h2>Print the coefficients, intercept, MSE, R2 and model runtime</h2>
+    <p>we got 86% by using 8 features in our model("neighborhood","total_area","overallqual", "garagecars","fullbath","yearbuilt","yearremodadd","yrsold") which indicate if the user input information for the selected 8 features, we should have 86% of predicting the accurate house price. </p>
+    <h3>Formula for our multiple linear regression model</h3>
+    <p>y = -2.67021895e-16 + 0.03896429neighborhood + 0.60886396total_area + 0.13411633overallqual + 0.08067865garagecars + (-0.07035814fullbath) + 0.16385461yearbuilt +0.12970701yearremodadd +(-0.01437204yrsold)</p>
+    <img src="../images/19.jpg">
+
+    <h2>Plot Predictions against Actual Values</h2>
+    <p>We plotted our predicted sale price against the actual sale price to see how the model performs. In a perfect mode with R2 score of 1, predicted value would equal actual value so there would be a straight diagonal line(x=y). As we can see from the below graph, our predicted prices are mostly scattered close to the straight diagonal line with few outliers. </p>
+    <img src="../images/20.jpg">
+
+    <h2>Multiple Linear Regression VS Deep Learning Model Summary</h2>
+    <p>After trials and errors, we decided to use Multiple Linear Regression because it gave a comparable result as Deep Learning Model while having a more consistent result with significantly faster runtime.</p>
+    <img src="../images/21.jpg">
+
+    <h2>Runtime Comparison</h2>
+    <img src="../images/22.jpg">
+
+    <h2>R2 Comparison</h2>
+    <img src="../images/23.jpg">
+
+    <h2>Future Improvement:</h2>
+    <ul>
+      <li><p>Only select houses that were sold after 2010 since the market has changed dramatically in the past 10 years</p></li>
+      <li><p>Eliminate outliers</p></li>
+      <li><p>Use LabelEncoder for features that has order or hierarchy and One Hot Encoder for features that don’t have hierarchy to more accurately label encoding features (ex. neighborhoods)</p></li>
+      <li><p>Try PCA to process features</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

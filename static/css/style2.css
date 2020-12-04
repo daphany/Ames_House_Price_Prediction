@@ -1,0 +1,194 @@
+@font-face{
+    font-family: 'Montserrat-Bold';
+    src: url('fonts/Montserrat-Bold.ttf');
+}
+
+@font-face{
+    font-family: 'Montserrat-Regular';
+    src: url('fonts/Montserrat-Regular.ttf');
+}
+@font-face{
+    font-family: 'Montserrat-Light';
+    src: url('fonts/Montserrat-Light.ttf');
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+max-width:100%;
+}
+body
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #c3cfe3;
+
+}
+
+/*NAVBAR*/
+.navbar .navbar-brand{
+    color: #074fa6;
+    font-size: 30px;
+    font-family: 'Montserrat-Bold';
+}
+.navbar .navbar-nav{
+   margin-left: 160px;
+}
+.navbar .navbar-nav .nav-link{
+    color: black;
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 12px;
+    transition: .3s;
+
+
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: white;
+    background-color: #074fa6
+
+}
+.active {
+   color: #fff!important;
+   background-color: #074fa6;
+}
+
+/*SLIDER*/
+
+.carousel-caption {
+    bottom: 600px;
+}
+.carousel-inner {
+    height: 500px;
+}
+.carousel-item h1{
+    font-size: 50px;
+}
+/*MACHINE LEARNING*/
+
+.machine-learning h1{
+   padding-top: 30px;
+   font-size: 40px;
+}
+.machine-learning .para{
+   font-size: 20px;
+   font-family: 'Montserrat-Regular';
+}
+.machine-learning ul li p{
+  color: #053482;
+  font-weight: 700;
+  font-size: 18px;
+  list-style: none;
+}
+
+
+/*DATA EXPLORATION*/
+.data-exploration h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.data-exploration p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+.machine-learning ul li p{
+  color: #053482;
+  font-weight: 700;
+  font-size: 18px;
+  list-style: none;
+  font-family: 'Montserrat-Regular';
+}
+.bolds{
+    font-weight: 700;
+}
+
+/*DATA CLEANING*/
+.data-cleaning h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.data-cleaning p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+.data-cleaning img{
+    padding-bottom: 20px;
+}
+
+/*FEATURE SELECTION*/
+.feature-selection h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.feature-selection p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+
+
+/*DATA EXPORT*/
+.data-export h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.data-export p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+
+/*AWS DATABASE*/
+.AWS-database h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.AWS-database p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+
+
+/*DATA MANIPULATION*/
+.data-manipulation h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.data-manipulation p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+
+
+/*MACHINE LEARNING*/
+.machine-learning h1{
+   padding-top: 65px;
+   padding-bottom: 10px;
+   font-size: 30px;
+}
+.machine-learning p{
+   font-size: 18px;
+   font-family: 'Montserrat-Regular';
+}
+.machine-learning img{
+    padding-bottom: 20px;
+}
+.machine-learning .blues{
+  color: #053482;
+  font-weight: 700;
+}
+.machine-learning h2{
+   padding-top: 25px;
+   font-size: 25px;
+   color: #053482;;
+}
+.machine-learning h3{
+   padding-top: 25px;
+   font-size: 20px;
+}

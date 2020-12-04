@@ -1,0 +1,212 @@
+ALTER ROLE postgres SET search_path = public, "$user", public; -- Persistent, for ro
+selecpublic."BLDGTYPE"t * from bldgtype
+select * from BLDGTYPE
+where BLDGTYPE = 'Duplex'
+
+SELECT *
+  FROM information_schema.columns
+where table_schema = 'public'
+
+
+select * from information_schema.tables
+select * from mssubclass WHERE MSSUBCLASS IS NOT NULL
+
+ALTER TABLE public."BLDGTYPE" RENAME TO bldgtype;
+ALTER TABLE public."MSSUBCLASS" RENAME TO mssubclass;
+ALTER TABLE public."MSZONING" RENAME TO mszoning;
+ALTER TABLE public."STREET_ALLEY" RENAME TO street_alley;
+ALTER TABLE public."HOUSE_PRICES" RENAME TO house_prices;
+ALTER TABLE public."LOTSHAPE" RENAME TO lotshape;
+ALTER TABLE public."LANDCONTOUR" RENAME TO landcontour;
+ALTER TABLE public."UTILITIES" RENAME TO utilities;
+ALTER TABLE public."LOTCONFIG" RENAME TO lotconfig;
+ALTER TABLE public."LANDSLOPE" RENAME TO landslope;
+ALTER TABLE public."NEIGHBORHOOD" RENAME TO neighborhood;
+ALTER TABLE public."CONDITION" RENAME TO condition;
+ALTER TABLE public."HOUSESTYLE" RENAME TO housestyle;
+ALTER TABLE public."OVERALL_QC" RENAME TO overall_qc;
+ALTER TABLE public."ROOFSTYLE" RENAME TO roofstyle;
+ALTER TABLE public."ROOFMATL" RENAME TO roofmatl;
+ALTER TABLE public."EXTERIOR_MASVNR" RENAME TO exterior_masvnr;
+ALTER TABLE public."EXTERQC" RENAME TO exterqc;
+ALTER TABLE public."FOUNDATION" RENAME TO foundation;
+ALTER TABLE public."BSMTQUAL" RENAME TO bsmtqual;
+ALTER TABLE public."BSMTCOND" RENAME TO bsmtcond;
+ALTER TABLE public."BSMTEXPOSURE" RENAME TO bsmtexposure;
+ALTER TABLE public."BSMTFINTYPE" RENAME TO bsmtfintype;
+ALTER TABLE public."HEATING" RENAME TO heating;
+ALTER TABLE public."HEATINGQC" RENAME TO heatingqc;
+ALTER TABLE public."ELECTRICAL" RENAME TO electrical;
+ALTER TABLE public."KITCHENQUAL" RENAME TO kitchenqual;
+ALTER TABLE public."FUNCTIONAL" RENAME TO functional;
+ALTER TABLE public."FIREPLACEQU" RENAME TO fireplacequ;
+ALTER TABLE public."GARAGETYPE" RENAME TO garagetype;
+ALTER TABLE public."GARAGEFINISH" RENAME TO garagefinish;
+ALTER TABLE public."GARAGE_QC" RENAME TO garage_qc;
+ALTER TABLE public."PAVEDDRIVE" RENAME TO paveddrive;
+ALTER TABLE public."POOLQC" RENAME TO poolqc;
+ALTER TABLE public."FENCE" RENAME TO fence;
+ALTER TABLE public."MISCFEATURE" RENAME TO miscfeature;
+ALTER TABLE public."SALETYPE" RENAME TO saletype;
+ALTER TABLE public."SALECONDITION" RENAME TO salecondition;
+
+
+ALTER TABLE foundation RENAME COLUMN "FOUNDATION_ID" TO foundation_id;
+ALTER TABLE house_prices RENAME COLUMN "BSMTFINTYPE1_ID" TO bsmtfintype1_id;
+ALTER TABLE house_prices RENAME COLUMN "OVERALLQUAL_ID" TO overallqual_id;
+ALTER TABLE bsmtqual RENAME COLUMN "BSMTQUAL" TO bsmtqual;
+ALTER TABLE house_prices RENAME COLUMN "GARAGEQUAL_ID" TO garagequal_id;
+ALTER TABLE exterior_masvnr RENAME COLUMN "EXTERIOR_MASVNR_ID" TO exterior_masvnr_id;
+ALTER TABLE poolqc RENAME COLUMN "POOLQC_ID" TO poolqc_id;
+ALTER TABLE house_prices RENAME COLUMN "POOLAREA" TO poolarea;
+ALTER TABLE house_prices RENAME COLUMN "MSSUBCLASS_ID" TO mssubclass_id;
+ALTER TABLE house_prices RENAME COLUMN "SCREENPORCH" TO screenporch;
+ALTER TABLE heatingqc RENAME COLUMN "HEATINGQC_ID" TO heatingqc_id;
+ALTER TABLE fence RENAME COLUMN "FENCE" TO fence;
+ALTER TABLE house_prices RENAME COLUMN "TOTALBSMTSF" TO totalbsmtsf;
+ALTER TABLE house_prices RENAME COLUMN "LOTCONFIG_ID" TO lotconfig_id;
+ALTER TABLE salecondition RENAME COLUMN "SALECONDITION" TO salecondition;
+ALTER TABLE exterqc RENAME COLUMN "EXTERQC" TO exterqc;
+ALTER TABLE fireplacequ RENAME COLUMN "FIREPLACEQU" TO fireplacequ;
+ALTER TABLE house_prices RENAME COLUMN "HOUSESTYLE_ID" TO housestyle_id;
+ALTER TABLE house_prices RENAME COLUMN "BSMTEXPOSURE_ID" TO bsmtexposure_id;
+ALTER TABLE functional RENAME COLUMN "FUNCTIONAL" TO functional;
+ALTER TABLE house_prices RENAME COLUMN "PAVEDDRIVE_ID" TO paveddrive_id;
+ALTER TABLE house_prices RENAME COLUMN "FIREPLACES" TO fireplaces;
+ALTER TABLE heating RENAME COLUMN "HEATING" TO heating;
+ALTER TABLE house_prices RENAME COLUMN "BSMTQUAL_ID" TO bsmtqual_id;
+ALTER TABLE house_prices RENAME COLUMN "EXTERIOR2ND_ID" TO exterior2nd_id;
+ALTER TABLE house_prices RENAME COLUMN "DATA_TYPE" TO data_type;
+ALTER TABLE house_prices RENAME COLUMN "MASVNRTYPE_ID" TO masvnrtype_id;
+ALTER TABLE bsmtfintype RENAME COLUMN "BSMTFINTYPE_ID" TO bsmtfintype_id;
+ALTER TABLE utilities RENAME COLUMN "UTILITIES_ID" TO utilities_id;
+ALTER TABLE bldgtype RENAME COLUMN "BLDGTYPE_ID" TO bldgtype_id;
+ALTER TABLE roofmatl RENAME COLUMN "ROOFMATL_ID" TO roofmatl_id;
+ALTER TABLE house_prices RENAME COLUMN "MASVNRAREA" TO masvnrarea;
+ALTER TABLE housestyle RENAME COLUMN "HOUSESTYLE" TO housestyle;
+ALTER TABLE landcontour RENAME COLUMN "LANDCONTOUR" TO landcontour;
+ALTER TABLE miscfeature RENAME COLUMN "MISCFEATURE_ID" TO miscfeature_id;
+ALTER TABLE electrical RENAME COLUMN "ELECTRICAL" TO electrical;
+ALTER TABLE landslope RENAME COLUMN "LANDSLOPE_ID" TO landslope_id;
+ALTER TABLE house_prices RENAME COLUMN "YEARBUILT" TO yearbuilt;
+ALTER TABLE house_prices RENAME COLUMN "BSMTCOND_ID" TO bsmtcond_id;
+ALTER TABLE house_prices RENAME COLUMN "YRSOLD" TO yrsold;
+ALTER TABLE house_prices RENAME COLUMN "EXTERIOR1ST_ID" TO exterior1st_id;
+ALTER TABLE lotshape RENAME COLUMN "LOTSHAPE" TO lotshape;
+ALTER TABLE house_prices RENAME COLUMN "OPENPORCHSF" TO openporchsf;
+ALTER TABLE paveddrive RENAME COLUMN "PAVEDDRIVE_ID" TO paveddrive_id;
+ALTER TABLE house_prices RENAME COLUMN "TOTRMSABVGRD" TO totrmsabvgrd;
+ALTER TABLE neighborhood RENAME COLUMN "NEIGHBORHOOD" TO neighborhood;
+ALTER TABLE garage_qc RENAME COLUMN "GARAGE_QC" TO garage_qc;
+ALTER TABLE house_prices RENAME COLUMN "BSMTUNFSF" TO bsmtunfsf;
+ALTER TABLE lotconfig RENAME COLUMN "LOTCONFIG" TO lotconfig;
+ALTER TABLE bsmtcond RENAME COLUMN "BSMTCOND" TO bsmtcond;
+ALTER TABLE roofstyle RENAME COLUMN "ROOFSTYLE_ID" TO roofstyle_id;
+ALTER TABLE saletype RENAME COLUMN "SALETYPE_ID" TO saletype_id;
+ALTER TABLE house_prices RENAME COLUMN "OVERALLCOND_ID" TO overallcond_id;
+ALTER TABLE house_prices RENAME COLUMN "BSMTFINSF2" TO bsmtfinsf2;
+ALTER TABLE house_prices RENAME COLUMN "BEDROOMABVGR" TO bedroomabvgr;
+ALTER TABLE house_prices RENAME COLUMN "GARAGECOND_ID" TO garagecond_id;
+ALTER TABLE mssubclass RENAME COLUMN "MSSUBCLASS_ID" TO mssubclass_id;
+ALTER TABLE garagefinish RENAME COLUMN "GARAGEFINISH" TO garagefinish;
+ALTER TABLE house_prices RENAME COLUMN "NEIGHBORHOOD_ID" TO neighborhood_id;
+ALTER TABLE overall_qc RENAME COLUMN "OVERALL_QC_ID" TO overall_qc_id;
+ALTER TABLE garagetype RENAME COLUMN "GARAGETYPE_ID" TO garagetype_id;
+ALTER TABLE house_prices RENAME COLUMN "YEARREMODADD" TO yearremodadd;
+ALTER TABLE kitchenqual RENAME COLUMN "KITCHENQUAL" TO kitchenqual;
+ALTER TABLE house_prices RENAME COLUMN "LOTAREA" TO lotarea;
+ALTER TABLE bsmtexposure RENAME COLUMN "BSMTEXPOSURE_ID" TO bsmtexposure_id;
+ALTER TABLE house_prices RENAME COLUMN "GRLIVAREA" TO grlivarea;
+ALTER TABLE street_alley RENAME COLUMN "STREET_ALLEY" TO street_alley;
+ALTER TABLE house_prices RENAME COLUMN "CONDITION2_ID" TO condition2_id;
+ALTER TABLE house_prices RENAME COLUMN "LOWQUALFINSF" TO lowqualfinsf;
+ALTER TABLE house_prices RENAME COLUMN "POOLQC_ID" TO poolqc_id;
+ALTER TABLE condition RENAME COLUMN "CONDITION_ID" TO condition_id;
+ALTER TABLE house_prices RENAME COLUMN "MOSOLD" TO mosold;
+ALTER TABLE mszoning RENAME COLUMN "MSZONING_ID" TO mszoning_id;
+ALTER TABLE house_prices RENAME COLUMN "FUNCTIONAL_ID" TO functional_id;
+ALTER TABLE house_prices RENAME COLUMN "HEATING_ID" TO heating_id;
+ALTER TABLE house_prices RENAME COLUMN "SALETYPE_ID" TO saletype_id;
+ALTER TABLE kitchenqual RENAME COLUMN "KITCHENQUAL_ID" TO kitchenqual_id;
+ALTER TABLE house_prices RENAME COLUMN "SALEPRICE" TO saleprice;
+ALTER TABLE house_prices RENAME COLUMN "GARAGETYPE_ID" TO garagetype_id;
+ALTER TABLE house_prices RENAME COLUMN "CENTRALAIR" TO centralair;
+ALTER TABLE overall_qc RENAME COLUMN "OVERALL_QC" TO overall_qc;
+ALTER TABLE garagetype RENAME COLUMN "GARAGETYPE" TO garagetype;
+ALTER TABLE house_prices RENAME COLUMN "FENCE_ID" TO fence_id;
+ALTER TABLE house_prices RENAME COLUMN "EXTERCOND_ID" TO extercond_id;
+ALTER TABLE house_prices RENAME COLUMN "STREET_ID" TO street_id;
+ALTER TABLE garagefinish RENAME COLUMN "GARAGEFINISH_ID" TO garagefinish_id;
+ALTER TABLE house_prices RENAME COLUMN "HEATINGQC_ID" TO heatingqc_id;
+ALTER TABLE mszoning RENAME COLUMN "MSZONING" TO mszoning;
+ALTER TABLE house_prices RENAME COLUMN "WOODDECKSF" TO wooddecksf;
+ALTER TABLE condition RENAME COLUMN "CONDITION" TO condition;
+ALTER TABLE street_alley RENAME COLUMN "STREET_ALLEY_ID" TO street_alley_id;
+ALTER TABLE house_prices RENAME COLUMN "FULLBATH" TO fullbath;
+ALTER TABLE house_prices RENAME COLUMN "HALFBATH" TO halfbath;
+ALTER TABLE house_prices RENAME COLUMN "ENCLOSEDPORCH" TO enclosedporch;
+ALTER TABLE house_prices RENAME COLUMN "MISCVAL" TO miscval;
+ALTER TABLE bsmtexposure RENAME COLUMN "BSMTEXPOSURE" TO bsmtexposure;
+ALTER TABLE lotshape RENAME COLUMN "LOTSHAPE_ID" TO lotshape_id;
+ALTER TABLE paveddrive RENAME COLUMN "PAVEDDRIVE" TO paveddrive;
+ALTER TABLE neighborhood RENAME COLUMN "NEIGHBORHOOD_ID" TO neighborhood_id;
+ALTER TABLE garage_qc RENAME COLUMN "GARAGE_QC_ID" TO garage_qc_id;
+ALTER TABLE lotconfig RENAME COLUMN "LOTCONFIG_ID" TO lotconfig_id;
+ALTER TABLE saletype RENAME COLUMN "SALETYPE" TO saletype;
+ALTER TABLE house_prices RENAME COLUMN "LOTSHAPE_ID" TO lotshape_id;
+ALTER TABLE house_prices RENAME COLUMN "SALECONDITION_ID" TO salecondition_id;
+ALTER TABLE mssubclass RENAME COLUMN "MSSUBCLASS" TO mssubclass;
+ALTER TABLE roofstyle RENAME COLUMN "ROOFSTYLE" TO roofstyle;
+ALTER TABLE house_prices RENAME COLUMN "EXTERQUAL_ID" TO exterqual_id;
+ALTER TABLE house_prices RENAME COLUMN "BSMTFULLBATH" TO bsmtfullbath;
+ALTER TABLE house_prices RENAME COLUMN "FOUNDATION_ID" TO foundation_id;
+ALTER TABLE bsmtcond RENAME COLUMN "BSMTCOND_ID" TO bsmtcond_id;
+ALTER TABLE house_prices RENAME COLUMN "GARAGECARS" TO garagecars;
+ALTER TABLE housestyle RENAME COLUMN "HOUSESTYLE_ID" TO housestyle_id;
+ALTER TABLE house_prices RENAME COLUMN "LANDCONTOUR_ID" TO landcontour_id;
+ALTER TABLE house_prices RENAME COLUMN "GARAGEAREA" TO garagearea;
+ALTER TABLE bsmtfintype RENAME COLUMN "BSMTFINTYPE" TO bsmtfintype;
+ALTER TABLE utilities RENAME COLUMN "UTILITIES" TO utilities;
+ALTER TABLE bldgtype RENAME COLUMN "BLDGTYPE" TO bldgtype;
+ALTER TABLE roofmatl RENAME COLUMN "ROOFMATL" TO roofmatl;
+ALTER TABLE house_prices RENAME COLUMN "ALLEY_ID" TO alley_id;
+ALTER TABLE house_prices RENAME COLUMN "ELECTRICAL_ID" TO electrical_id;
+ALTER TABLE house_prices RENAME COLUMN "MSZONING_ID" TO mszoning_id;
+ALTER TABLE electrical RENAME COLUMN "ELECTRICAL_ID" TO electrical_id;
+ALTER TABLE house_prices RENAME COLUMN "GARAGEFINISH_ID" TO garagefinish_id;
+ALTER TABLE landslope RENAME COLUMN "LANDSLOPE" TO landslope;
+ALTER TABLE landcontour RENAME COLUMN "LANDCONTOUR_ID" TO landcontour_id;
+ALTER TABLE house_prices RENAME COLUMN "CONDITION1_ID" TO condition1_id;
+ALTER TABLE miscfeature RENAME COLUMN "MISCFEATURE" TO miscfeature;
+ALTER TABLE house_prices RENAME COLUMN "BSMTFINSF1" TO bsmtfinsf1;
+ALTER TABLE poolqc RENAME COLUMN "POOLQC" TO poolqc;
+ALTER TABLE house_prices RENAME COLUMN "HOUSE_ID" TO house_id;
+ALTER TABLE house_prices RENAME COLUMN "FIREPLACEQU_ID" TO fireplacequ_id;
+ALTER TABLE heatingqc RENAME COLUMN "HEATINGQC" TO heatingqc;
+ALTER TABLE house_prices RENAME COLUMN "ROOFSTYLE_ID" TO roofstyle_id;
+ALTER TABLE exterior_masvnr RENAME COLUMN "EXTERIOR_MASVNR" TO exterior_masvnr;
+ALTER TABLE house_prices RENAME COLUMN "BSMTHALFBATH" TO bsmthalfbath;
+ALTER TABLE house_prices RENAME COLUMN "2NDFLRSF" TO "2ndflrsf";
+ALTER TABLE house_prices RENAME COLUMN "3SSNPORCH" TO "3ssnporch";
+ALTER TABLE bsmtqual RENAME COLUMN "BSMTQUAL_ID" TO bsmtqual_id;
+ALTER TABLE house_prices RENAME COLUMN "GARAGEYRBLT" TO garageyrblt;
+ALTER TABLE foundation RENAME COLUMN "FOUNDATION" TO foundation;
+ALTER TABLE house_prices RENAME COLUMN "MISCFEATURE_ID" TO miscfeature_id;
+ALTER TABLE heating RENAME COLUMN "HEATING_ID" TO heating_id;
+ALTER TABLE house_prices RENAME COLUMN "BLDGTYPE_ID" TO bldgtype_id;
+ALTER TABLE exterqc RENAME COLUMN "EXTERQC_ID" TO exterqc_id;
+ALTER TABLE fireplacequ RENAME COLUMN "FIREPLACEQU_ID" TO fireplacequ_id;
+ALTER TABLE house_prices RENAME COLUMN "KITCHENQUAL_ID" TO kitchenqual_id;
+ALTER TABLE functional RENAME COLUMN "FUNCTIONAL_ID" TO functional_id;
+ALTER TABLE house_prices RENAME COLUMN "BSMTFINTYPE2_ID" TO bsmtfintype2_id;
+ALTER TABLE salecondition RENAME COLUMN "SALECONDITION_ID" TO salecondition_id;
+ALTER TABLE house_prices RENAME COLUMN "LOTFRONTAGE" TO lotfrontage;
+ALTER TABLE fence RENAME COLUMN "FENCE_ID" TO fence_id;
+ALTER TABLE house_prices RENAME COLUMN "KITCHENABVGR" TO kitchenabvgr;
+ALTER TABLE house_prices RENAME COLUMN "1STFLRSF" TO "1stflrsf";
+
+
+SELECT * FROM HOUSE_PRICES WHERE roofmatl_id IS NOT NULL
+
+
+
