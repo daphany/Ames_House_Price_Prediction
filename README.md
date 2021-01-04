@@ -2,12 +2,6 @@
 ## Project Overview
 We used House Price dataset from kaggle dataset(https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data). Our goal is to use multiple linear regression model to predict the house price based on selected features and use Javascript to write a website to publish our model. On the weibite, customers will be able to enter different features of their house as input and out will return an estimated house price.
 
-##  Description of the communication
-* we have weekly meeting on zoom
-* we have regular communicate on slack 
-## Link to the Google Slide
-https://docs.google.com/presentation/d/1rfWITkZjMb6rclgVjF-IFZPDe-3ajrZsUKvwRUZ89hA/edit?ts=5faf2e83#slide=id.g4dfce81f19_0_45
-
 ## Link to the Tableau Dashboard
 https://public.tableau.com/profile/kassie.lu#!/vizhome/AmesHousingSalesPricesDashboard/Dashboard?publish=yes
 
