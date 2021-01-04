@@ -7,8 +7,8 @@ https://public.tableau.com/profile/kassie.lu#!/vizhome/AmesHousingSalesPricesDas
 
 ## Dataset Content
 The original dataset contains the following files:
-* ames_raw.csv - 2930 rows and 83 columns
-* ames_geo.csv - 2932 rows and 4 columns (this is only used for tableau component)
+* ames_raw.csv
+* ames_geo.csv (this is only used for tableau for visualizing location of each house)
 * data_description.txt - full description of each column
 
 ### Data fields
@@ -96,20 +96,7 @@ SaleType: Type of sale
 SaleCondition: Condition of sale
 
 ## SQL Database
-### Export Transform and Load
-1) EXTRACT
-- Extracted from csv files
-- Filtered to compare features affecting house prices
-- Evaluated possible correlations between (ten features) and house prices
-- Explored ...
-
-
-
-2) TRANSFORM
--
-
-
-3) LOAD 
+### Load
 - Loaded data frames into tables using PostgreSQL
 - Normalized data in SQL
 - Joined tables and exported to .CSV for Machine Learning*
